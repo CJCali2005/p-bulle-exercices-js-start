@@ -4,33 +4,41 @@
 //
 
 export class BankAccount {
+  ClsAcc;
+  Liaska;
+
   constructor() {
-    throw new Error('Remove this line and implement the function');
+    this.ClsAcc = true;
+    this.Liaska = 0;
   }
 
   open() {
-    throw new Error('Remove this line and implement the function');
+    this.ClsAcc = false;
   }
 
   close() {
-    throw new Error('Remove this line and implement the function');
+    this.ClsAcc = true;
   }
 
-  deposit() {
-    throw new Error('Remove this line and implement the function');
+  deposit(depoTHUNE) {
+    this.Liaska += depoTHUNE;
   }
 
-  withdraw() {
-    throw new Error('Remove this line and implement the function');
+  withdraw(retraitTHUNE) {
+    this.Liaska -= retraitTHUNE;
   }
 
   get balance() {
-    throw new Error('Remove this line and implement the function');
+    if ((this.ClsAcc = false)) {
+      return this.Liaska;
+    } else {
+      throw new Error(ValueError);
+    }
   }
 }
 
 export class ValueError extends Error {
   constructor() {
-    super('Bank account error');
+    super("Bank account error");
   }
 }
