@@ -13,23 +13,40 @@ export class BankAccount {
   }
 
   open() {
-    this.isClosed = false;
     this.balance = 0;
+
+    if (!this.isClosed) {
+      throw new ValueError();
+    } else {
+      this.isClosed = false;
+    }
   }
 
   close() {
-    this.isClosed = true;
+    if (this.isClosed) {
+      throw new ValueError();
+    } else {
+      this.isClosed = true;
+    }
   }
 
   deposit(depoArgent) {
+    if (this.isClosed || depoArgent < 0) {
+      throw new ValueError();
+    }
+
     this.balance += depoArgent;
   }
 
   withdraw(retraitArgent) {
-    this.balance -= retraitArgent;
+    if (retraitArgent > this.Balance || retraitArgent < 0) {
+      throw new ValueError();
+    } else {
+      this.balance -= retraitArgent;
+    }
   }
 
-  get balance() {
+  get Balance() {
     if (this.isClosed) {
       throw new ValueError();
     } else {
