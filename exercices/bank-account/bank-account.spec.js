@@ -5,14 +5,14 @@ describe("Bank Account", () => {
   test("newly opened account has zero balance", () => {
     const account = new BankAccount();
     account.open();
-    expect(account.balance).toEqual(0);
+    expect(account.Balance).toEqual(0);
   });
 
   test("Single deposit", () => {
     const account = new BankAccount();
     account.open();
     account.deposit(100);
-    expect(account.balance).toEqual(100);
+    expect(account.Balance).toEqual(100);
   });
 
   test('Multiple deposits"', () => {
@@ -20,7 +20,7 @@ describe("Bank Account", () => {
     account.open();
     account.deposit(100);
     account.deposit(50);
-    expect(account.balance).toEqual(150);
+    expect(account.Balance).toEqual(150);
   });
 
   test("Withdraw once", () => {
@@ -28,7 +28,7 @@ describe("Bank Account", () => {
     account.open();
     account.deposit(100);
     account.withdraw(50);
-    expect(account.balance).toEqual(50);
+    expect(account.Balance).toEqual(50);
   });
 
   test("Withdraw twice", () => {
@@ -37,7 +37,7 @@ describe("Bank Account", () => {
     account.deposit(100);
     account.withdraw(20);
     account.withdraw(80);
-    expect(account.balance).toEqual(0);
+    expect(account.Balance).toEqual(0);
   });
 
   test("Can do multiple operations sequentially", () => {
@@ -48,14 +48,14 @@ describe("Bank Account", () => {
     account.withdraw(200);
     account.deposit(60);
     account.withdraw(50);
-    expect(account.balance).toEqual(20);
+    expect(account.Balance).toEqual(20);
   });
 
   test("Cannot check balance of closed account", () => {
     const account = new BankAccount();
     account.open();
     account.close();
-    expect(() => account.balance).toThrow(ValueError);
+    expect(() => account.Balance).toThrow(ValueError);
   });
 
   test("Cannot deposit into closed account", () => {
@@ -104,7 +104,7 @@ describe("Bank Account", () => {
     account.deposit(50);
     account.close();
     account.open();
-    expect(account.balance).toEqual(0);
+    expect(account.Balance).toEqual(0);
   });
 
   test("Cannot withdraw more than deposited", () => {
@@ -140,7 +140,7 @@ describe("Bank Account", () => {
 
     for (let i = 0; i < 10; i++) {
       await adjustBalanceConcurrently(account);
-      expect(account.balance).toEqual(1000);
+      expect(account.Balance).toEqual(1000);
     }
   });
 
@@ -170,7 +170,7 @@ describe("Bank Account", () => {
     const account = new BankAccount();
     account.open();
     expect(() => {
-      account.balance = 100;
+      account.Balance = 100;
     }).toThrow(Error);
   });
 });
