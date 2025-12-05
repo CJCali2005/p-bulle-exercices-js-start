@@ -4,35 +4,36 @@
 //
 
 export class BankAccount {
-  ClsAcc;
-  Liaska;
+  isClosed;
+  balance;
 
   constructor() {
-    this.ClsAcc = true;
-    this.Liaska = 0;
+    this.isClosed = true;
+    this.balance = 0;
   }
 
   open() {
-    this.ClsAcc = false;
+    this.isClosed = false;
+    this.balance = 0;
   }
 
   close() {
-    this.ClsAcc = true;
+    this.isClosed = true;
   }
 
-  deposit(depoTHUNE) {
-    this.Liaska += depoTHUNE;
+  deposit(depoArgent) {
+    this.balance += depoArgent;
   }
 
-  withdraw(retraitTHUNE) {
-    this.Liaska -= retraitTHUNE;
+  withdraw(retraitArgent) {
+    this.balance -= retraitArgent;
   }
 
   get balance() {
-    if ((this.ClsAcc = false)) {
-      return this.Liaska;
+    if (this.isClosed) {
+      throw new ValueError();
     } else {
-      throw new Error(ValueError);
+      return this.balance;
     }
   }
 }
