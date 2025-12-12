@@ -39,7 +39,14 @@ export function revokeTicket(visitor) {
  * @returns {string} ticket status
  */
 export function ticketStatus(tickets, ticketId) {
-  throw new Error("Remove this line and implement the function");
+  let a = tickets[ticketId];
+  if (a == undefined) {
+    return "unknown ticket id";
+  } else if (a !== null) {
+    return "sold to " + a;
+  } else if (a == null) {
+    return "sold to " + a;
+  }
 }
 
 /**
