@@ -40,11 +40,11 @@ export function revokeTicket(visitor) {
  */
 export function ticketStatus(tickets, ticketId) {
   let a = tickets[ticketId];
-  if (a == undefined) {
+  if (a === undefined) {
     return "unknown ticket id";
-  } else if (a !== null) {
-    return "sold to " + a;
   } else if (a == null) {
+    return "not sold";
+  } else {
     return "sold to " + a;
   }
 }
@@ -58,9 +58,15 @@ export function ticketStatus(tickets, ticketId) {
  * @returns {string} ticket status
  */
 export function simpleTicketStatus(tickets, ticketId) {
-  throw new Error("Remove this line and implement the function");
+  let a = tickets[ticketId];
+  if (a === undefined) {
+    return "invalid ticket !!!";
+  } else if (a == null) {
+    return "invalid ticket !!!";
+  } else {
+    return a;
+  }
 }
-
 /**
  * Determines the version of the GTC that was signed by the visitor.
  *
@@ -68,5 +74,10 @@ export function simpleTicketStatus(tickets, ticketId) {
  * @returns {string | undefined} version
  */
 export function gtcVersion(visitor) {
-  throw new Error("Remove this line and implement the function");
+  let a = visitor.gtc;
+  if (a === undefined) {
+    return;
+  } else {
+    return a.version;
+  }
 }
