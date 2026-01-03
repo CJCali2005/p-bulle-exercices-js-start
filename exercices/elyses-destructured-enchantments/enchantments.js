@@ -9,7 +9,9 @@
  * @returns {Card} the first card in the deck
  */
 export function getFirstCard(deck) {
-  throw new Error('Implement the getFirstCard function');
+  const [ carte1 , carte2 , rest] = deck ;
+
+  return carte1 ;
 }
 
 /**
@@ -20,7 +22,11 @@ export function getFirstCard(deck) {
  * @returns {Card} the second card in the deck
  */
 export function getSecondCard(deck) {
-  throw new Error('Implement the getSecondCard function');
+
+  const [ carte1 , carte2 , rest] = deck ;
+
+  return carte2 ;
+
 }
 
 /**
@@ -31,7 +37,11 @@ export function getSecondCard(deck) {
  * @returns {[Card, Card]} new deck with the 2 cards swapped
  */
 export function swapTwoCards(deck) {
-  throw new Error('Implement the swapTopTwoCards function');
+
+
+  const [ carte1 , carte2 ] = deck ;
+
+  return [ carte2 , carte1 ] ;
 }
 
 /**
@@ -42,7 +52,11 @@ export function swapTwoCards(deck) {
  * @returns {[Card, Card, Card]} new deck with the 3 cards shifted by one position
  */
 export function shiftThreeCardsAround(deck) {
-  throw new Error('Implement the discardTopCard function');
+
+  const [ carte1 , carte2 , carte3] = deck ;
+
+  return [ carte2 , carte3 , carte1 ] ;
+
 }
 
 /**
@@ -53,8 +67,10 @@ export function shiftThreeCardsAround(deck) {
  * @returns {Card[]} the pile named chosen
  */
 export function pickNamedPile(piles) {
-  // 🚨 Do NOT use piles.chosen or piles.disregarded.
-  throw new Error('Implement the pickNamedPile function');
+
+    const { chosen } = piles;
+
+    return chosen ;
 }
 
 /**
@@ -67,5 +83,13 @@ export function swapNamedPile(piles) {
   // 🪄 Don't break the magic.
   // 🚨 Do NOT use piles.chosen or piles.disregarded.
   // 🚨 Do NOT touch the next line or Elyse will accidentally reveal the trick.
-  return { chosen, disregarded };
+ 
+  /*const { chosen } = disregarded;
+  const { disregarded } = chosen*/
+
+  const {chosen} = piles
+  const {disregarded} = piles;
+
+  //a gauche le nom de base et apres : la valeur qu'on veut mettre
+  return { chosen : disregarded , disregarded : chosen};
 }
