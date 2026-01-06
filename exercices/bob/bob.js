@@ -4,5 +4,36 @@
 //
 
 export const hey = (message) => {
-  throw new Error('Remove this line and implement the function');
+  if(message.trim().endsWith('?')){
+  
+    
+    if(!/[a-z]/.test(message) && /[A-Z]/.test(message)){
+
+      return "Calm down, I know what I'm doing!";
+
+    }
+    else{
+
+      return "Sure.";
+    }
+
+  }
+  
+  if(/[a-z]/.test(message) || /[A-Z]/.test(message) || /[\d]/.test(message) ){
+    
+
+    if(!/[a-z]/.test(message) && /[A-Z]/.test(message)){
+
+      return "Whoa, chill out!";
+
+    }
+    else{
+      return "Whatever." ;
+    }
+  }
+  
+    return "Fine. Be that way!";
+  
+
+  
 };
