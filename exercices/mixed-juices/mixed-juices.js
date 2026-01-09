@@ -11,43 +11,25 @@
  * @returns {number} time in minutes
  */
 export function timeToMixJuice(name) {
-
-  switch(name){
-
+  switch (name) {
     case "Pure Strawberry Joy":
-      
-    return 0.5 ;
-    break;
-
-
+      return 0.5;
+      break;
     case "Energizer":
-
-    return 1.5 ;
-    break;
-
-
+      return 1.5;
+      break;
     case "Green Garden":
-
-    return 1.5 ;
-    break;
-
-
+      return 1.5;
+      break;
     case "Tropical Island":
-      
-    return 3 ;
-    break;
-
-
+      return 3;
+      break;
     case "All or Nothing":
-
-    return 5 ;
-    break;
-
+      return 5;
+      break;
     default:
-      
-    return 2.5;
-    break;
-
+      return 2.5;
+      break;
   }
 }
 
@@ -61,41 +43,32 @@ export function timeToMixJuice(name) {
  */
 export function limesToCut(wedgesNeeded, limes) {
   let numberWedges = 0;
-  let index = 0 ;
-  let countLIME = 0 ;
-  
-while( numberWedges < wedgesNeeded && index <= limes.length - 1 )
-{
-  switch(limes[index]){
+  let index = 0;
+  let countLIME = 0;
 
-    
-    case "small":
+  while (numberWedges < wedgesNeeded && index <= limes.length - 1) {
+    switch (limes[index]) {
+      case "small":
+        numberWedges += 6;
+        countLIME + index;
 
-      numberWedges += 6 ;
-      countLIME + index;
+        break;
+      case "medium":
+        numberWedges += 8;
+        countLIME + index;
 
-    break;
-    case"medium":
+        break;
+      case "large":
+        numberWedges += 10;
+        countLIME + index;
 
-      numberWedges += 8 ;
-      countLIME + index ;
+        break;
+    }
 
-    break;
-    case "large":
-
-      numberWedges += 10 ;
-      countLIME + index ;
-
-    break;
+    index++;
   }
-    
-
-    index ++;
-
-}
 
   return index;
-
 }
 
 /**
@@ -106,23 +79,16 @@ while( numberWedges < wedgesNeeded && index <= limes.length - 1 )
  * @returns {string[]} remaining orders after the time is up
  */
 export function remainingOrders(timeLeft, orders) {
-
   let tab = [];
-  let a = 0 ;
+  let a = 0;
 
-  for(let i = 0 ; i <= orders.length - 1; i++ )
-  {
-
-  
-    if( timeLeft <= 0 )
-    {
+  for (let i = 0; i <= orders.length - 1; i++) {
+    if (timeLeft <= 0) {
       tab[a] = orders[i];
-      a++
+      a++;
     }
 
-    timeLeft = timeLeft-timeToMixJuice(orders[i]);
-
-  } 
-  return  tab;
-
+    timeLeft = timeLeft - timeToMixJuice(orders[i]);
+  }
+  return tab;
 }
