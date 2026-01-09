@@ -4,36 +4,20 @@
 //
 
 export const hey = (message) => {
-  if(message.trim().endsWith('?')){
-  
-    
-    if(!/[a-z]/.test(message) && /[A-Z]/.test(message)){
-
+  if (message.trim().endsWith("?")) {
+    if (!/[a-z]/.test(message) && /[A-Z]/.test(message)) {
       return "Calm down, I know what I'm doing!";
-
-    }
-    else{
-
+    } else {
       return "Sure.";
     }
-
   }
-  
-  if(/[a-z]/.test(message) || /[A-Z]/.test(message) || /[\d]/.test(message) ){
-    
 
-    if(!/[a-z]/.test(message) && /[A-Z]/.test(message)){
-
+  if (/[a-z]/.test(message) || /[A-Z]/.test(message) || /[\d]/.test(message)) {
+    if (!/[a-z]/.test(message) && /[A-Z]/.test(message)) {
       return "Whoa, chill out!";
-
-    }
-    else{
-      return "Whatever." ;
+    } else {
+      return "Whatever.";
     }
   }
-  
-    return "Fine. Be that way!";
-  
-
-  
+  return "Fine. Be that way!";
 };
