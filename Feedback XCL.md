@@ -10,3 +10,7 @@
   - Vous passez au minimum trois jours à travailler intensément sur ces exercices
   - Vous ne comittez que du code que vous avez compris et que vous êtes en mesure de m'expliquer complètement
   - Vous documentez ce travail de manière précise dans votre journal de travail.
+
+## Final
+
+- Voir grille
